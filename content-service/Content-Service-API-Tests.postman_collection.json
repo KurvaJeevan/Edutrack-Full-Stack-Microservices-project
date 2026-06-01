@@ -1,0 +1,134 @@
+{
+	"info": {
+		"name": "Content Service API Tests",
+		"description": "Complete API testing for Content Service endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:1010",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "1. Create Content for Module",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"contentType\": \"Video\",\n  \"title\": \"Introduction to Spring Boot\",\n  \"contentUri\": \"https://example.com/videos/spring-boot-intro.mp4\",\n  \"duration\": 45.5,\n  \"status\": \"Published\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/content/module/1",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "content", "module", "1"]
+				},
+				"description": "Create content for a specific module (INSTRUCTOR/ADMIN only)"
+			}
+		},
+		{
+			"name": "2. Get Content by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/content/1",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "content", "1"]
+				},
+				"description": "Get content by ID (ALL roles, checks enrollment for STUDENT)"
+			}
+		},
+		{
+			"name": "3. Get All Content by Module ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/content/module/1",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "content", "module", "1"]
+				},
+				"description": "Get all content for a module (ALL roles, checks enrollment for STUDENT)"
+			}
+		},
+		{
+			"name": "4. Update Content",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"moduleId\": 1,\n  \"contentType\": \"Video\",\n  \"title\": \"Advanced Spring Boot Concepts\",\n  \"contentUri\": \"https://example.com/videos/spring-boot-advanced.mp4\",\n  \"duration\": 60.0,\n  \"status\": \"Published\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/content/1",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "content", "1"]
+				},
+				"description": "Update existing content (INSTRUCTOR/ADMIN only)"
+			}
+		},
+		{
+			"name": "5. Delete Content",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/content/1",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "content", "1"]
+				},
+				"description": "Delete content by ID (INSTRUCTOR/ADMIN only)"
+			}
+		}
+	]
+}

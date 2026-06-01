@@ -1,0 +1,141 @@
+<div class="dashboard-wrapper p-4 bg-light min-vh-100">
+  
+  <header class="d-flex justify-content-between align-items-center mb-5">
+    <div>
+      <h2 class="fw-bold text-dark mb-1">Scholar Dashboard</h2>
+      <p class="text-muted mb-0">Track your learning journey and academic milestones.</p>
+    </div>
+    <div class="text-end">
+      <span class="badge bg-white text-dark border shadow-sm px-3 py-2 rounded-pill">
+        <i class="bi bi-person-circle me-2 text-primary"></i>{{ userRole() }}
+      </span>
+    </div>
+  </header>
+
+  <div class="row g-4 mb-5">
+    <div class="col-md-4">
+      <div class="stat-card p-4 rounded-4 shadow-sm bg-white border-0 h-100">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <p class="text-uppercase text-muted small fw-bold mb-1">Programs</p>
+            <h2 class="fw-black mb-0">{{ totalEnrolled() }}</h2>
+          </div>
+          <div class="icon-box bg-primary-soft text-primary">
+            <i class="bi bi-journal-bookmark-fill"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="stat-card p-4 rounded-4 shadow-sm bg-white border-0 h-100">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <p class="text-uppercase text-muted small fw-bold mb-1">Completed</p>
+            <h2 class="fw-black mb-0 text-success">{{ completedCount() }}</h2>
+          </div>
+          <div class="icon-box bg-success-soft text-success">
+            <i class="bi bi-patch-check-fill"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="stat-card p-4 rounded-4 shadow-sm bg-white border-0 h-100">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <p class="text-uppercase text-muted small fw-bold mb-1">Learning Progress</p>
+            <h2 class="fw-black mb-0">{{ overallCompletion() | number:'1.0-0' }}%</h2>
+          </div>
+          <div class="icon-box bg-warning-soft text-warning">
+            <i class="bi bi-lightning-charge-fill"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <h5 class="fw-bold text-dark mb-4">Your Learning Path</h5>
+      
+      @for (enroll of enrolledPrograms(); track enroll.enrollmentId) {
+        @if (programDetails().find(p => p.programId === enroll.programId)) {
+        <div class="course-item-card mb-3 p-3 bg-white rounded-4 shadow-sm border-0 transition-hover">
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <div class="program-avatar text-white fw-bold bg-primary shadow-sm">
+                {{ programDetails().find(p => p.programId === enroll.programId)?.name?.charAt(0) || 'P' }}
+              </div>
+            </div>
+            
+            <div class="col">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <h6 class="fw-bold text-dark mb-0">
+                  {{ programDetails().find(p => p.programId === enroll.programId)?.name || 'Loading Program...' }}
+                </h6>
+                <span class="small fw-bold text-muted">{{ getProgress(enroll.programId) | number:'1.0-0' }}%</span>
+              </div>
+              
+              <div class="progress mb-2" style="height: 6px; background-color: #f0f2f5;">
+                <div class="progress-bar rounded-pill" 
+                     [class.bg-success]="getProgress(enroll.programId) === 100"
+                     [class.bg-primary]="getProgress(enroll.programId) < 100"
+                     [style.width.%]="getProgress(enroll.programId)">
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted"><i class="bi bi-calendar-event me-1"></i>Joined {{ enroll.enrolledDate | date:'mediumDate' }}</small>
+                
+              @if (programProgress()[enroll.programId]?.programCompleted){
+                  <span class="badge-custom bg-success-soft text-success small">
+                    <i class="bi bi-award-fill me-1"></i>Completed
+                  </span>
+                } @else {
+                  <span class="badge-custom bg-primary-soft text-primary small">
+                    <i class="bi bi-play-circle-fill me-1"></i>Active
+                  </span>
+                }
+              </div>
+            </div>
+
+            <div class="col-auto ps-4">
+              <button class="btn btn-primary rounded-pill btn-sm px-4 py-2 fw-bold shadow-sm" [routerLink]="['/programs', enroll.programId]">
+                Continue
+              </button>
+            </div>
+          </div>
+        </div>
+      }} @empty {
+        <div class="empty-state text-center p-5 bg-white rounded-4 border-dashed">
+          <img src="https://cdn-icons-png.flaticon.com/512/7486/7486744.png" width="80" class="mb-3 opacity-50" alt="empty">
+          <h6 class="fw-bold">No active enrollments</h6>
+          <p class="text-muted small mb-3">Explore our catalog to start your learning journey.</p>
+          <button class="btn btn-primary rounded-pill px-4" routerLink="/program-list">Browse Programs</button>
+        </div>
+      }
+    </div>
+
+    <div class="col-lg-4">
+      <h5 class="fw-bold text-dark mb-4">Updates</h5>
+      <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+        <div class="announcement-item mb-4 d-flex gap-3">
+          <div class="ann-icon bg-danger-soft text-danger"><i class="bi bi-megaphone-fill"></i></div>
+          <div>
+            <h6 class="fw-bold mb-0 small">Server Maintenance</h6>
+            <p class="text-muted smaller mb-0">Scheduled for March 30, 12:00 AM IST.</p>
+          </div>
+        </div>
+        <div class="announcement-item d-flex gap-3">
+          <div class="ann-icon bg-info-soft text-info"><i class="bi bi-stars"></i></div>
+          <div>
+            <h6 class="fw-bold mb-0 small">New Microservices Course</h6>
+            <p class="text-muted smaller mb-0">Explore advanced patterns in Java 21.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,136 @@
+{
+  "hash": "08af5ee2",
+  "configHash": "f6d1e8e7",
+  "lockfileHash": "598b5690",
+  "browserHash": "99b5c95c",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "051f020f",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "0525da48",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "6e842cb4",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "8045e061",
+      "needsInterop": false
+    },
+    "@angular/localize/init": {
+      "src": "../../../../../../node_modules/@angular/localize/fesm2022/init.mjs",
+      "file": "@angular_localize_init.js",
+      "fileHash": "dfec5f31",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "d357c533",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "4fac46ad",
+      "needsInterop": false
+    },
+    "chart.js": {
+      "src": "../../../../../../node_modules/chart.js/dist/chart.js",
+      "file": "chart__js.js",
+      "fileHash": "456080d2",
+      "needsInterop": false
+    },
+    "html2canvas": {
+      "src": "../../../../../../node_modules/html2canvas/dist/html2canvas.esm.js",
+      "file": "html2canvas.js",
+      "fileHash": "8c54090a",
+      "needsInterop": false
+    },
+    "jspdf": {
+      "src": "../../../../../../node_modules/jspdf/dist/jspdf.es.min.js",
+      "file": "jspdf.js",
+      "fileHash": "ea2f8d1b",
+      "needsInterop": false
+    },
+    "jwt-decode": {
+      "src": "../../../../../../node_modules/jwt-decode/build/esm/index.js",
+      "file": "jwt-decode.js",
+      "fileHash": "bda673c6",
+      "needsInterop": false
+    },
+    "ng2-charts": {
+      "src": "../../../../../../node_modules/ng2-charts/fesm2022/ng2-charts.mjs",
+      "file": "ng2-charts.js",
+      "fileHash": "e865d7f9",
+      "needsInterop": false
+    },
+    "ngx-sonner": {
+      "src": "../../../../../../node_modules/ngx-sonner/fesm2022/ngx-sonner.mjs",
+      "file": "ngx-sonner.js",
+      "fileHash": "a0e021df",
+      "needsInterop": false
+    },
+    "rxjs": {
+      "src": "../../../../../../node_modules/rxjs/dist/esm5/index.js",
+      "file": "rxjs.js",
+      "fileHash": "74234422",
+      "needsInterop": false
+    },
+    "tslib": {
+      "src": "../../../../../../node_modules/tslib/tslib.es6.mjs",
+      "file": "tslib.js",
+      "fileHash": "afef580a",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "index.es-WO7ASNNQ": {
+      "file": "index__es-WO7ASNNQ.js"
+    },
+    "chunk-WUUVWCMF": {
+      "file": "chunk-WUUVWCMF.js"
+    },
+    "chunk-BAOZP7GX": {
+      "file": "chunk-BAOZP7GX.js"
+    },
+    "purify.es-NUIQSWHM": {
+      "file": "purify__es-NUIQSWHM.js"
+    },
+    "chunk-XPYE5WMH": {
+      "file": "chunk-XPYE5WMH.js"
+    },
+    "chunk-KVOWE2ME": {
+      "file": "chunk-KVOWE2ME.js"
+    },
+    "chunk-FES6NQGW": {
+      "file": "chunk-FES6NQGW.js"
+    },
+    "chunk-TOZW4PW5": {
+      "file": "chunk-TOZW4PW5.js"
+    },
+    "chunk-ZGP6UBJ6": {
+      "file": "chunk-ZGP6UBJ6.js"
+    },
+    "chunk-Y72XGDAT": {
+      "file": "chunk-Y72XGDAT.js"
+    },
+    "chunk-HSWANC32": {
+      "file": "chunk-HSWANC32.js"
+    },
+    "chunk-46DXP6YY": {
+      "file": "chunk-46DXP6YY.js"
+    }
+  }
+}

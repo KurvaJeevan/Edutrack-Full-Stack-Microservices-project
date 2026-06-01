@@ -1,0 +1,17 @@
+# Ignore Eclipse Workspace metadata
+.metadata/
+RemoteSystemsTempFiles/
+*.userlibraries
+
+# Ignore Java build files
+**/target/
+**.class
+
+# Ignore Angular / Node build files
+**/node_modules/
+**/dist/
+
+# Ignore IDE settings
+.idea/
+.vscode/
+*.iml
