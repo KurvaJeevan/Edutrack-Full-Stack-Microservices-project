@@ -1,4 +1,11 @@
-# 🚀 EduTrack – Learning Management Platform Using Microservices
+# 🚀 EduTrack – Enterprise Academic Management Platform built using Spring Boot Microservices.
+
+![Java](https://img.shields.io/badge/Java-17-orange)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-green)
+![Angular](https://img.shields.io/badge/Angular-Frontend-red)
+![Microservices](https://img.shields.io/badge/Architecture-Microservices-blue)
+![JWT](https://img.shields.io/badge/Security-JWT-yellow)
+
 
 EduTrack is a full-stack Learning Management System (LMS) built using a microservices architecture. The platform is designed to manage learning programs, course content, student enrollments, assessments, and user access control through independent services communicating via Spring Cloud components.
 
@@ -21,7 +28,24 @@ Each role interacts with the platform through a secure authentication system and
 All client requests are routed through a centralized API Gateway, which communicates with backend services using Eureka Service Discovery.
 
 ---
+## Business Capabilities
 
+EduTrack was designed as an Academic Management System that supports the complete learning lifecycle from program creation to assessment evaluation.
+---
+### Core Functionalities
+
+- User Management with Role-Based Access Control (RBAC)
+- Program, Course, and Module Management
+- Enrollment and Attendance Tracking
+- Learning Content Delivery
+- Assessment and Evaluation System
+- Progress Monitoring
+- Student Performance Tracking
+- Quiz and Submission Management
+- Academic Analytics Dashboard
+
+The platform enables institutions to manage learning workflows while providing instructors with visibility into student performance and academic outcomes.
+---
 ## 🎯 Key Features
 
 * Microservices-based architecture
@@ -36,6 +60,16 @@ All client requests are routed through a centralized API Gateway, which communic
 * Automated assessment evaluation
 * Randomized question selection
 * Secure service-to-service communication
+* Academic Management System
+* Role-Based Access Control (RBAC)
+* Student Performance Analytics
+* Interactive Dashboards
+* Assessment Evaluation Workflow
+* Attendance Tracking
+* Progress Monitoring
+* RESTful Service Communication
+* JWT Authorization
+* Enterprise-Ready Architecture
 
 ---
 ## 🚀 Getting Started
@@ -408,8 +442,13 @@ The organization repository contains the collective work and contributions from 
 
 **Jeevan Kumar**
 
-Software Engineer | Full Stack Developer | Backend Enthusiast
+Software Engineer at Cognizant
 
-Passionate about Microservices, Distributed Systems, Cloud Technologies, and Scalable Application Design.
+Interested in:
+- Backend Engineering
+- Distributed Systems
+- Microservices Architecture
+- Cloud-Native Applications
+- Full Stack Development
 
 GitHub: https://github.com/KurvaJeevan
